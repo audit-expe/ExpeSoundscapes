@@ -225,10 +225,9 @@ function updateSliderFill(slider) {
   slider.style.background = `linear-gradient(to right, black 0%, black ${pct}%, #d0d0d0 ${pct}%, #d0d0d0 100%)`;
 }
 
-function activateSlider(slider, valueLabel, labels) {
+function activateSlider(slider, labels) {
   slider.classList.remove("untouched");
   updateSliderFill(slider);
-  valueLabel.textContent = labels[Number(slider.value) - 1];
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -622,13 +621,23 @@ function addStimulusTrials(stim) {
           input.addEventListener("change", refreshNextButton);
         });
 
+        calmSlider.addEventListener("pointerdown", () => {
+          activateSlider(calmSlider, calm_labels);
+          refreshNextButton();
+        });
+        
         calmSlider.addEventListener("input", () => {
-          activateSlider(calmSlider, calmValue, calm_labels);
+          activateSlider(calmSlider, calm_labels);
           refreshNextButton();
         });
 
+        pleasantSlider.addEventListener("pointerdown", () => {
+          activateSlider(pleasantSlider, pleasant_labels);
+          refreshNextButton();
+        });
+        
         pleasantSlider.addEventListener("input", () => {
-          activateSlider(pleasantSlider, pleasantValue, pleasant_labels);
+          activateSlider(pleasantSlider, pleasant_labels);
           refreshNextButton();
         });
 
