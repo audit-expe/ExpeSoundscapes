@@ -415,9 +415,9 @@ timeline.push({
     <div class="panel">
       <h2>Soundscape evaluation</h2>
       <p>You will listen to 8 soundscapes of 5 seconds each.</p>
-      <p>A soundscape is a sound recording made in a single location and environment.</p>
+      <p>A soundscape is a sound recording made in a single location.</p>
       <p>After listening, several multiple-choice questions will be presented.</p>
-      <p>In particular, you will need to choose the season in which you think the recording was made. Please note that these sounds were recorded in Senegal, which has only two seasons: dry season and wet season. These sounds come from a location far from any settlement.</p>
+      <p>In particular, you will need to choose the season during which you think the recording was made. Please note that these sounds were recorded in Senegal, where there is only two seasons: dry season and wet season. These sounds come from a location far from any human settlement.</p>
       <p>Please complete this experiment in a quiet room and wearing headphones.</p>
     </div>
   `,
@@ -431,7 +431,7 @@ timeline.push({
   stimulus: `
     <div class="panel center">
       <h2>The experiment is about to begin.</h2>
-      <p>You can track your progress using the blue bar at the top of your screen.</p>
+      <p>You can track your progress using the bar at the top of your screen.</p>
     </div>
   `,
   choices: ["START"],
@@ -567,25 +567,23 @@ function addStimulusTrials(stim) {
           </div>
 
           <div class="q-block">
-            <div class="q-label">Is this sound calm or exciting?</div>
+            <div class="q-label">Rate this sound on a scale ranging from calm to exciting?</div>
             <div class="slider-grid">
               ${calm_labels.map(label => `<span>${label}</span>`).join("")}
             </div>
             <div class="slider-wrap">
               <input type="range" id="calm-slider" class="untouched" min="1" max="5" step="1" value="3">
             </div>
-            <div id="calm-value" class="slider-value"></div>
           </div>
 
           <div class="q-block">
-            <div class="q-label">Is this sound pleasant or unpleasant?</div>
+            <div class="q-label">Rate this sound on a scale ranging from pleasant to unpleasant?</div>
             <div class="slider-grid">
               ${pleasant_labels.map(label => `<span>${label}</span>`).join("")}
             </div>
             <div class="slider-wrap">
               <input type="range" id="pleasant-slider" class="untouched" min="1" max="5" step="1" value="3">
             </div>
-            <div id="pleasant-value" class="slider-value"></div>
           </div>
 
           <div id="question-error" class="error"></div>
